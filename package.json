@@ -1,0 +1,31 @@
+{
+  "name": "tolokoban-toolbox",
+  "version": "0.0.1",
+  "description": "Command line code generator to get rid of manual boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "rm -rf test/src/view/world && node dist/index.js test/src/view/world && ls -l test/src/view/world",
+    "build": "tsc --project src/",
+    "watch": "tsc --watch --project src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tolokoban/tolokoban-toolbox.git"
+  },
+  "keywords": [
+    "boilerplate",
+    "tolokoban"
+  ],
+  "author": "Tolokoban <contact@tolokoban.org> (http://twitter.com/tolokoban)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/tolokoban/tolokoban-toolbox/issues"
+  },
+  "homepage": "https://github.com/tolokoban/tolokoban-toolbox#readme",
+  "devDependencies": {
+    "@types/node": "^12.11.1",
+    "jest": "^24.9.0",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {}
+}

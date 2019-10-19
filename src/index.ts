@@ -33,6 +33,10 @@ for (const file of Arguments.files) {
         `div.${className} {}`
     )
     FS.writeFileSync(
+        Path.resolve(fullpath, `${basename}.yaml`),
+        `en:\n\tok: Ok\nfr:\n\tok: Valider\n`
+    )
+    FS.writeFileSync(
         Path.resolve(fullpath, `${basename}.tsx`),
         SimpleTemplate(root, removeExtension(basename), className, backToRoot)
     )

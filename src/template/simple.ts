@@ -11,8 +11,11 @@ ${
     FS.existsSync(`${root}types.ts`) || FS.existsSync(`${root}types.tsx`) ?
     `import { * } from "${backToRoot}/types"\n` : ''
 }import Button from "${backToRoot}/tfw/view/button"
+import Intl from "${backToRoot}/tfw/intl"
 
 import "./${filename}.css"
+
+const _ = Intl.make(require("./${filename}.yaml"))
 
 interface T${name}Props {}
 interface T${name}State {}

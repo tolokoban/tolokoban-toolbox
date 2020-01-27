@@ -34,7 +34,7 @@ for (const file of Arguments.files) {
     )
     FS.writeFileSync(
         Path.resolve(fullpath, `${basename}.yaml`),
-        `en:\n\tok: Ok\nfr:\n\tok: Valider\n`
+        `en:\n    ok: Ok\nfr:\n    ok: Valider\n`
     )
     FS.writeFileSync(
         Path.resolve(fullpath, `${basename}.tsx`),

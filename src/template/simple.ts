@@ -6,21 +6,22 @@ export default (root: string, filename: string, className: string, backToRoot: s
     const name = Text.capitalize(Text.camelize(filename))
 
     return `import React from "react"
+import Tfw from 'tfw'
 
 ${
     FS.existsSync(`${root}types.ts`) || FS.existsSync(`${root}types.tsx`) ?
     `import { * } from "${backToRoot}/types"\n` : ''
-}import Button from "${backToRoot}/tfw/view/button"
-import Intl from "${backToRoot}/tfw/intl"
+}
 
 import "./${filename}.css"
 
-const _ = Intl.make(require("./${filename}.yaml"))
+const Button = Tfw.View.Button
+const _ = Tfw.Intl.make(require("./${filename}.yaml"))
 
-interface T${name}Props {}
-interface T${name}State {}
+interface I${name}Props {}
+interface I${name}State {}
 
-export default class ${name} extends React.Component<T${name}Props, T${name}State> {
+export default class ${name} extends React.Component<I${name}Props, I${name}State> {
     constructor( props: T${name}Props ) {
         super(props)
         this.state = {}

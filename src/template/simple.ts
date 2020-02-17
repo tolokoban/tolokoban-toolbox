@@ -18,19 +18,22 @@ import "./${filename}.css"
 const Button = Tfw.View.Button
 const _ = Tfw.Intl.make(require("./${filename}.yaml"))
 
-interface I${name}Props {}
+interface I${name}Props {
+    className?: string[]
+}
 interface I${name}State {}
 
 export default class ${name} extends React.Component<I${name}Props, I${name}State> {
-    constructor( props: T${name}Props ) {
-        super(props)
-        this.state = {}
-    }
+    protected state = {}
 
     render() {
-        const classes = ['${className}']
+        const classes = [
+            '${className}',
+            ...Tfw.Converter.StringArray(this.props.className, [])
+        ]
 
         return (<div className={classes.join(' ')}>
+            <Button label={_('ok')} />
         </div>)
     }
 }

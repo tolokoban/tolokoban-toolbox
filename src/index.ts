@@ -33,8 +33,14 @@ for (const file of Arguments.files) {
         `div.${className} {}`
     )
     FS.writeFileSync(
-        Path.resolve(fullpath, `${basename}.yaml`),
-        `en:\n    ok: Ok\nfr:\n    ok: Valider\n`
+        Path.resolve(fullpath, `${basename}.json`),
+        `{
+  "en": {
+    "ok": "Ok"
+  },
+  "fr": {
+    "ok": "Valider"
+  }`
     )
     FS.writeFileSync(
         Path.resolve(fullpath, `${basename}.tsx`),

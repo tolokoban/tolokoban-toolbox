@@ -23,9 +23,13 @@
   },
   "homepage": "https://github.com/tolokoban/tolokoban-toolbox#readme",
   "devDependencies": {
-    "@types/node": "^12.11.1",
+    "@types/node": "^12.12.55",
     "jest": "^24.9.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.9.7"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@typescript-eslint/typescript-estree": "^4.0.1",
+    "chalk": "^4.1.0",
+    "readline-sync": "^1.4.10"
+  }
 }

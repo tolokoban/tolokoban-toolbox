@@ -24,7 +24,7 @@ for (var _i = 0, _a = arguments_1.default.files; _i < _a.length; _i++) {
     FS.writeFileSync(Path.resolve(fullpath, "index.ts"), "export { default } from './" + basename + "'");
     var _b = figureOutClassName(dirname, basename), root = _b.root, className = _b.className, backToRoot = _b.backToRoot;
     FS.writeFileSync(Path.resolve(fullpath, basename + ".css"), "div." + className + " {}");
-    FS.writeFileSync(Path.resolve(fullpath, basename + ".yaml"), "en:\n\tok: Ok\nfr:\n\tok: Valider\n");
+    FS.writeFileSync(Path.resolve(fullpath, basename + ".json"), "{\n  \"en\": {\n    \"ok\": \"Ok\"\n  },\n  \"fr\": {\n    \"ok\": \"Valider\"\n  }");
     FS.writeFileSync(Path.resolve(fullpath, basename + ".tsx"), simple_1.default(root, removeExtension(basename), className, backToRoot));
 }
 function removeExtension(filename) {

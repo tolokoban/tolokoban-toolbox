@@ -9,22 +9,22 @@ export default (root: string, filename: string, className: string, backToRoot: s
 import Tfw from 'tfw'
 
 ${
-    FS.existsSync(`${root}types.ts`) || FS.existsSync(`${root}types.tsx`) ?
-    `import { * } from "${backToRoot}/types"\n` : ''
-}
+        FS.existsSync(`${root}types.ts`) || FS.existsSync(`${root}types.tsx`) ?
+            `// import { ... } from "${backToRoot}/types"\n` : ''
+        }
 
 import "./${filename}.css"
 
 const Button = Tfw.View.Button
-const _ = Tfw.Intl.make(require("./${filename}.yaml"))
+const _ = Tfw.Intl.make(require("./${filename}.json"))
 
 interface I${name}Props {
-    className?: string[]
+    className?: string | string[]
 }
 interface I${name}State {}
 
 export default class ${name} extends React.Component<I${name}Props, I${name}State> {
-    protected state = {}
+    state = {}
 
     render() {
         const classes = [
